@@ -1,0 +1,38 @@
+name: Chronos Continues Integration
+
+on:
+  push:
+    branches:
+      - master
+      - develop
+      - feature/*
+      - release/*
+      - hotfix/*
+      - support/*
+      - bugfix/*
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [12.x]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: Install project dependencies
+      uses: borales/actions-yarn@v2.0.0
+      with:
+        cmd: install
+    - name: Run tests
+      uses: borales/actions-yarn@v2.0.0
+      with:
+        cmd: test
