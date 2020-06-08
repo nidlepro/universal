@@ -1,8 +1,42 @@
 {
   "name": "@arekzc/chronos-cli",
   "version": "0.0.0",
-  "main": "src/index.js",
+  "bin": {
+    "chronos": "bin/chronos"
+  },
+  "main": "dist/index.js",
   "repository": "https://github.com/ArekZc/chronos",
   "author": "Arek Zając",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@types/eslint": "^6.8.1",
+    "@types/jest": "^25.2.3",
+    "@types/lodash": "^4.14.155",
+    "@types/prettier": "^2.0.1",
+    "@types/stylelint": "^9.10.1",
+    "@typescript-eslint/eslint-plugin": "^3.1.0",
+    "@typescript-eslint/parser": "^3.1.0",
+    "commander": "^5.1.0",
+    "eslint": "^7.2.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.3",
+    "file-loader": "^6.0.0",
+    "jest": "^26.0.1",
+    "lodash": "^4.17.15",
+    "prettier": "^2.0.5",
+    "reflect-metadata": "^0.1.13",
+    "stylelint": "^13.6.0",
+    "stylelint-config-sass-guidelines": "^7.0.0",
+    "ts-jest": "^26.1.0",
+    "ts-loader": "^7.0.5",
+    "typescript": "^3.9.5",
+    "url-loader": "^4.1.0",
+    "webpack-node-externals": "^1.7.2"
+  },
+  "scripts": {
+    "install": "yarn run build",
+    "lint": "./bin/chronos lint",
+    "build": "tsc",
+    "test": "./bin/chronos test"
+  }
 }

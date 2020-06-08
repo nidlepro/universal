@@ -1,7 +1,15 @@
 {
+  "name": "root",
   "private": true,
-  "workspaces": ["packages/*"],
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
+    "bootstrap": "lerna bootstrap --use-workspaces",
     "test": "echo 'Test'"
+  },
+  "dependencies": {
+    "conventional-changelog": "^3.1.21",
+    "lerna": "^3.22.0"
   }
 }
