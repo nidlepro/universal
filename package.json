@@ -6,10 +6,12 @@
   ],
   "scripts": {
     "bootstrap": "lerna bootstrap --use-workspaces",
-    "test": "echo 'Test'"
+    "lint": "lerna run lint",
+    "test": "lerna run test"
   },
   "dependencies": {
     "conventional-changelog": "^3.1.21",
-    "lerna": "^3.22.0"
+    "lerna": "^3.22.0",
+    "@arekzc/chronos-cli": "*"
   }
 }

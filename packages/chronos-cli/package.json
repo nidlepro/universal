@@ -9,6 +9,7 @@
   "author": "Arek Zając",
   "license": "MIT",
   "dependencies": {
+    "@rauschma/stringio": "^1.4.0",
     "@types/eslint": "^6.8.1",
     "@types/jest": "^25.2.3",
     "@types/lodash": "^4.14.155",
