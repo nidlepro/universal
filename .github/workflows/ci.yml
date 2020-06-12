@@ -20,7 +20,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [12.x]
+        node-version: [14.x]
 
     steps:
     - uses: actions/checkout@v2
@@ -43,4 +43,4 @@ jobs:
     - name: Publish package
       uses: borales/actions-yarn@v2.0.0
       with:
-        cmd: run publish 
+        cmd: run publish --new-version 0.0.0-dev.$(git rev-parse --short HEAD) --skip-build

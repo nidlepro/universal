@@ -49,8 +49,8 @@ export function publishModule(program: Command): void {
     .option('--new-version [version]', 'The version with which the packages will be published')
     .option('--skip-build', 'Should script run build before publish')
     .action(async (cmd) => {
-      const binDir = (await execPromise('yarn bin')).stdout.toString().replace(/(\r\n|\n|\r)/gm, '')
-      const packages = (await execPromise(`${path.join(binDir, 'lerna')} ls -l`)).stdout
+      const lernaBin = (await execPromise('yarn bin lerna')).stdout.toString().replace(/(\r\n|\n|\r)/gm, '')
+      const packages = (await execPromise(`${lernaBin} ls -l`)).stdout
         .toString()
         .split(/\r?\n/)
         .filter((pack) => pack !== '')
@@ -64,7 +64,7 @@ export function publishModule(program: Command): void {
         })
 
       if (!cmd.skipBuild) {
-        const buildSource = spawn(path.join(binDir, 'lerna'), ['run', '--no-private', '--stream', 'build'], {
+        const buildSource = spawn(lernaBin, ['run', '--no-private', '--stream', 'build'], {
           stdio: ['ignore', 'pipe', process.stderr],
         })
 
@@ -94,8 +94,17 @@ export function publishModule(program: Command): void {
       await execPromise('git commit -m "this will not be pushed"')
 
       const publishSource = spawn(
-        path.join(binDir, 'lerna'),
-        ['publish', '--no-git-tag-version', '--no-push', '-y', '--ignore-scripts', '--no-git-reset', 'from-package'],
+        lernaBin,
+        [
+          'publish',
+          '--no-git-tag-version',
+          '--no-verify-access',
+          '--no-push',
+          '-y',
+          '--ignore-scripts',
+          '--no-git-reset',
+          'from-package',
+        ],
         { stdio: ['ignore', 'pipe', process.stderr] },
       )
 

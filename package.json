@@ -9,11 +9,12 @@
     "build": "lerna run build",
     "lint": "lerna run lint",
     "test": "lerna run test",
-    "publish": "chronos publish"
+    "publish-all": "chronos publish"
   },
   "dependencies": {
+    "@arekzc/chronos-cli": "*",
     "conventional-changelog": "^3.1.21",
-    "lerna": "^3.22.0",
-    "@arekzc/chronos-cli": "*"
-  }
+    "lerna": "^3.22.0"
+  },
+  "version": "0.0.0"
 }
