@@ -1,0 +1,7 @@
+{
+  "eslint.nodePath": ".yarn/pnpify",
+  "prettier.prettierPath": ".yarn/pnpify/prettier/index.js",
+  "typescript.tsdk": ".yarn/pnpify/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "stylelint.stylelintPath": ".yarn/pnpify/stylelint/lib/index.js"
+}

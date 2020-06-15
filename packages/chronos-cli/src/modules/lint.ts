@@ -27,12 +27,19 @@ export interface StylelintOptions {
 export function createEslintConfig(overrideConfig: Linter.BaseConfig = {}): Linter.BaseConfig {
   return merge<Linter.BaseConfig, Linter.BaseConfig>(
     {
-      parser: '@typescript-eslint/parser',
+      parser: require.resolve('@typescript-eslint/parser'),
       parserOptions: {
         ecmaVersion: 2020, // Allows for the parsing of modern ECMAScript features
         sourceType: 'module', // Allows for the use of imports
       },
-      extends: ['plugin:@typescript-eslint/recommended', 'plugin:prettier/recommended'],
+      extends: [
+        require.resolve('@typescript-eslint/eslint-plugin/dist/configs/eslint-recommended'),
+        require.resolve('eslint-config-prettier'),
+      ],
+      plugins: [
+        '@typescript-eslint/eslint-plugin',
+        'eslint-plugin-prettier',
+      ]
     },
     overrideConfig,
   )
