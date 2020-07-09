@@ -37,6 +37,11 @@ jobs:
       - name: Build packages
         uses: ./.github/actions/chronos/yarn
         with:
+          cmd: workspaces foreach --exclude root run build
+          gh_token: ${{ secrets.GH_TOKEN }}
+      - name: Lint packages
+        uses: ./.github/actions/chronos/yarn
+        with:
           cmd: workspaces foreach --exclude root run lint
           gh_token: ${{ secrets.GH_TOKEN }}
       - name: Run tests

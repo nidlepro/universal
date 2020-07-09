@@ -1,6 +1,6 @@
 {
   "name": "@arekzc/chronos-cli",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "bin": {
     "chronos": "./bin/chronos.js"
   },
@@ -36,8 +36,8 @@
     "webpack-node-externals": "^1.7.2"
   },
   "scripts": {
-    "lint": "./bin/chronos lint",
+    "lint": "./bin/chronos.js lint",
     "build": "tsc",
-    "test": "./bin/chronos test"
+    "test": "./bin/chronos.js test"
   }
 }
