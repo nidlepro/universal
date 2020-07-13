@@ -1,6 +1,11 @@
 import { StepDefinition, StepMatch, StepExecutionFunction } from './models/stepDefinition.model'
 import { GherkinParser } from '../gherkin/gherkin.parser'
-import { JestAdapter, Adapter } from '../adapters/jest.adapter'
+import { JestAdapter } from '../adapters/jest.adapter'
+import { Feature } from '../gherkin/models/feature.model'
+
+export interface Adapter {
+  run<World>(feature: Feature, world: World): void
+}
 
 export type StepType = 'given' | 'when' | 'then'
 

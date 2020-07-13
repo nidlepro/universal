@@ -1,6 +1,6 @@
 {
   "name": "@arekzc/chronos-cli",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "bin": {
     "chronos": "./bin/chronos.js"
   },

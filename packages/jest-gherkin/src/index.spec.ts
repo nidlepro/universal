@@ -47,14 +47,14 @@ interface CucumberExampleWorld {
 }
 
 createDefinition<CucumberExampleWorld>()
-  .withGiven<{ amount: string }>(/^there are (?<amount>\d+) cucumbers$/, ({ world, params }) => {
-    world.cucumbersCount = Number(params?.amount)
+  .withGiven<[string]>(/^there are (?<amount>\d+) cucumbers$/, ({ world, params: [amount] }) => {
+    world.cucumbersCount = Number(amount)
   })
-  .withWhen<{ amount: string }>(/^I eat (?<amount>\d+) cucumbers$/, ({ world, params }) => {
-    world.cucumbersCount -= Number(params?.amount)
+  .withWhen<[string]>(/^I eat (?<amount>\d+) cucumbers$/, ({ world, params: [amount] }) => {
+    world.cucumbersCount -= Number(amount)
   })
-  .withThen<{ amount: string }>(/^I should have (?<amount>\d+) cucumbers$/, ({ world, params }) => {
-    expect(world.cucumbersCount).toBe(Number(params?.amount))
+  .withThen<[string]>(/^I should have (?<amount>\d+) cucumbers$/, ({ world, params: [amount] }) => {
+    expect(world.cucumbersCount).toBe(Number(amount))
   })
   .run(`
 Feature: Eating cucumbers

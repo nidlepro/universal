@@ -3,7 +3,7 @@ import { DataTable } from "../../gherkin/models/dataTable.model"
 
 export interface StepExecutionContext<World, Params, Data> {
   world: World
-  params?: Params
+  params: Params
   dataTable?: DataTable<Data>
   docString?: DocString
 }

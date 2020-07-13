@@ -1,11 +1,11 @@
-import { Feature } from "../gherkin/models/feature.model";
-import { Adapter } from "../definition/definition.builder";
+import { Adapter } from '../definition/definition.builder'
+import { Feature } from '../gherkin/models/feature.model'
 
-export class JestAdapter implements Adapter {
+export class JasmineAdapter implements Adapter {
   run<World>(feature: Feature, world: World): void {
     describe(feature.title, () => {
       feature.scenarios.forEach((scenario) => {
-        test(scenario.title, () => (
+        it(scenario.title, (done: any) => (
           scenario.steps.reduce<Promise<any>>((promise, step) => {
             return promise.then(() => step.definition.execution({
               world,
@@ -13,7 +13,7 @@ export class JestAdapter implements Adapter {
               dataTable: step.dataTable,
               docString: step.docString,
             }))
-          }, Promise.resolve())
+          }, Promise.resolve()).then(done)
         ))
       })
     })

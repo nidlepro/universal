@@ -43,7 +43,7 @@ export class Step {
       } else if (stepDefinition.match instanceof RegExp) {
         const match = (astStep.text as string).match(stepDefinition.match)
         
-        params = match?.groups
+        params = match
 
         return match
       }

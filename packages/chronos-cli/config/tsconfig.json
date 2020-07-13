@@ -20,6 +20,5 @@
     "resolveJsonModule": true,
     "isolatedModules": false,
     "noEmit": false,
-    "jsx": "react"
   }
 }

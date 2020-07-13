@@ -1,7 +1,10 @@
 {
   "name": "@arekzc/jest-gherkin",
-  "version": "0.1.2",
-  "main": "./dist/index.js",
+  "version": "0.2.0",
+  "main": "dist/index.js",
+  "repository": "https://github.com/ArekZc/chronos",
+  "author": "Arek Zając",
+  "license": "MIT",
   "scripts": {
     "lint": "chronos lint",
     "build": "tsc -p ./tsconfig.build.json",
