@@ -1,0 +1,22 @@
+{
+  "name": "@arekzc/jest-gherkin",
+  "version": "0.1.2",
+  "main": "./dist/index.js",
+  "scripts": {
+    "lint": "chronos lint",
+    "build": "tsc -p ./tsconfig.build.json",
+    "test": "chronos test"
+  },
+  "devDependencies": {
+    "@arekzc/chronos-cli": "workspace:*",
+    "typescript": "^3.9.5"
+  },
+  "dependencies": {
+    "@cucumber/gherkin": "^14.0.2"
+  },
+  "peerDependencies": {
+    "@types/jest": "*",
+    "jest": "*",
+    "rxjs": "*"
+  }
+}

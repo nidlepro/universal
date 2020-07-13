@@ -1,0 +1,8 @@
+{
+  "extends": "@arekzc/chronos-cli/config/tsconfig.json",
+  "compilerOptions": {
+    "outDir": "dist"
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"]
+}

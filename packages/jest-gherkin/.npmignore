@@ -1,0 +1,6 @@
+coverage
+src
+.prettierrc.js
+.jest.config.js
+stylelint.config.js
+.eslintrc.js

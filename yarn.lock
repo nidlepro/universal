@@ -5,7 +5,7 @@ __metadata:
   version: 4
   cacheKey: 4
 
-"@arekzc/chronos-cli@workspace:packages/chronos-cli":
+"@arekzc/chronos-cli@workspace:*, @arekzc/chronos-cli@workspace:packages/chronos-cli":
   version: 0.0.0-use.local
   resolution: "@arekzc/chronos-cli@workspace:packages/chronos-cli"
   dependencies:
@@ -36,6 +36,20 @@ __metadata:
     webpack-node-externals: ^1.7.2
   bin:
     chronos: ./bin/chronos.js
+  languageName: unknown
+  linkType: soft
+
+"@arekzc/jest-gherkin@workspace:packages/jest-gherkin":
+  version: 0.0.0-use.local
+  resolution: "@arekzc/jest-gherkin@workspace:packages/jest-gherkin"
+  dependencies:
+    "@arekzc/chronos-cli": "workspace:*"
+    "@cucumber/gherkin": ^14.0.2
+    typescript: ^3.9.5
+  peerDependencies:
+    "@types/jest": "*"
+    jest: "*"
+    rxjs: "*"
   languageName: unknown
   linkType: soft
 
@@ -390,6 +404,31 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@cucumber/gherkin@npm:^14.0.2":
+  version: 14.0.2
+  resolution: "@cucumber/gherkin@npm:14.0.2"
+  dependencies:
+    "@cucumber/messages": ^12.2.0
+    "@teppeis/multimaps": ^1.1.0
+    commander: ^5.1.0
+    source-map-support: ^0.5.19
+  bin:
+    gherkin-javascript: bin/gherkin
+  checksum: 33945b12936d73dc64da05c4c2d090ecfd004ef88ef24c39e599d537405a3b0311520d52b1fdc85e66da0d1475bdf7e0ecf71f659ad9970ab27e2420c7c92a88
+  languageName: node
+  linkType: hard
+
+"@cucumber/messages@npm:^12.2.0":
+  version: 12.2.0
+  resolution: "@cucumber/messages@npm:12.2.0"
+  dependencies:
+    "@types/uuid": ^8.0.0
+    protobufjs: ^6.9.0
+    uuid: ^8.2.0
+  checksum: d51119d376215677819a4200feb04321866bbb4f44ed28408d7aa885683bb71cd0b1e8da0ac02b6eaded22aa8244f55ca98f1fb1702f087f36d07aa03649c0f9
+  languageName: node
+  linkType: hard
+
 "@istanbuljs/load-nyc-config@npm:^1.0.0":
   version: 1.1.0
   resolution: "@istanbuljs/load-nyc-config@npm:1.1.0"
@@ -639,6 +678,79 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@protobufjs/aspromise@npm:^1.1.1, @protobufjs/aspromise@npm:^1.1.2":
+  version: 1.1.2
+  resolution: "@protobufjs/aspromise@npm:1.1.2"
+  checksum: 83ced0798abea0c30ed07dc6338605ddfd8dc7b8b15d84586d155980f90476a8f049e7695d7de79d35dcada29a01710d24d0aa2104e8466412c0cbc6c14d9173
+  languageName: node
+  linkType: hard
+
+"@protobufjs/base64@npm:^1.1.2":
+  version: 1.1.2
+  resolution: "@protobufjs/base64@npm:1.1.2"
+  checksum: ae9e84aaf69f5e6aedfb346153c236e6f6ca0e97612c680251fc3e48e6c60746ed553062ea97fdde9f0592fb085e467b9de377a848a224d990a4f0a5e7212fa4
+  languageName: node
+  linkType: hard
+
+"@protobufjs/codegen@npm:^2.0.4":
+  version: 2.0.4
+  resolution: "@protobufjs/codegen@npm:2.0.4"
+  checksum: a05d5f8892eeb7696c73f7585a9c3a89eea293b37a582cd1a5d650908393287b0ca068dc55e7bbecd3ec146b2f61afaff2f61e3cb488ea67b900114247b1b717
+  languageName: node
+  linkType: hard
+
+"@protobufjs/eventemitter@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "@protobufjs/eventemitter@npm:1.1.0"
+  checksum: 32a84e33f191a3ddc0ca4f8975484c0afaf10c2b27e0cb2008dabe267791420447c25d77b1409595aa6be660a908ada306d40cccb675aee7912c4bc82a9f512e
+  languageName: node
+  linkType: hard
+
+"@protobufjs/fetch@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "@protobufjs/fetch@npm:1.1.0"
+  dependencies:
+    "@protobufjs/aspromise": ^1.1.1
+    "@protobufjs/inquire": ^1.1.0
+  checksum: d682e5d8a164d096d71b05866eb0852d4e1fc024900e3af96a57d9f6396402b96d81b7bd77cda6b983ebcbfd715ec12dd1c1582760b7658a9438c530f5f6f4db
+  languageName: node
+  linkType: hard
+
+"@protobufjs/float@npm:^1.0.2":
+  version: 1.0.2
+  resolution: "@protobufjs/float@npm:1.0.2"
+  checksum: eee7278de2c4550fac7ec156cba3d4227226a08470426cba6eb04671be9aea035bdf79b7839fdad624171451a4d66e1cdf01e4980e57223ba4f1e34ccd187563
+  languageName: node
+  linkType: hard
+
+"@protobufjs/inquire@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "@protobufjs/inquire@npm:1.1.0"
+  checksum: 3541518cca945c2a95e2dcacacdc243fd64abc4cc51c2b691bd0534bd8a1b945c90368f57ba3fed1d6632e1e68d6dac6a7761738f89ccf60bb352b6624c8aacb
+  languageName: node
+  linkType: hard
+
+"@protobufjs/path@npm:^1.1.2":
+  version: 1.1.2
+  resolution: "@protobufjs/path@npm:1.1.2"
+  checksum: 22f10c5c22e5b3f7bb3e7f0af15bafa1fe42bad3705f27448464c6221d956d10c6c9dad96a48650ec5acba7b072a64ab94da52e21f00e6cd9612da761f02b845
+  languageName: node
+  linkType: hard
+
+"@protobufjs/pool@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "@protobufjs/pool@npm:1.1.0"
+  checksum: 5fc4af9e069b58cc39cfd6fded3bfe3de7113d35c1bc3458bfc6699fa42e90c2c6d96b5ae7c274470f272135122a9ab94c708eacfd81e1b0a593917841b07ec4
+  languageName: node
+  linkType: hard
+
+"@protobufjs/utf8@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "@protobufjs/utf8@npm:1.1.0"
+  checksum: 5b3fa7425fe2852f6e5643d9a53c6cfb4491630667176c0fc35ddb7a71101559241bafb6b80486144ed75da3d3624095d037c802b578dbdb4cce131cf1bcb7cf
+  languageName: node
+  linkType: hard
+
 "@rauschma/stringio@npm:^1.4.0":
   version: 1.4.0
   resolution: "@rauschma/stringio@npm:1.4.0"
@@ -704,6 +816,13 @@ __metadata:
   dependencies:
     defer-to-connect: ^2.0.0
   checksum: 13d8f71dbd792b620b2cd13d72d086ef031ebefd5263a9db2f34693a32e4d90920fa1d7075cd59bf0c9810b2b1b93ad36d89fc88aba4cd3b8022df7ecc5ffdec
+  languageName: node
+  linkType: hard
+
+"@teppeis/multimaps@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "@teppeis/multimaps@npm:1.1.0"
+  checksum: 923bae958987475c78c1d9dff54977c92d72251f3243ef31fb42583c2e90676c39478cb4b93e39ca9392da603595e1c1a99088d1bce79a29a5ed36fa9c5b535d
   languageName: node
   linkType: hard
 
@@ -883,6 +1002,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/long@npm:^4.0.1":
+  version: 4.0.1
+  resolution: "@types/long@npm:4.0.1"
+  checksum: ed2a125330dbf2b425b2e58b1e1151a37106ceeec973f9f191fba0bda83ed00fae6d858254022e8b6e7165fec5f0c3872b7cb5f425c753383fed54699fb63b38
+  languageName: node
+  linkType: hard
+
 "@types/minimatch@npm:*":
   version: 3.0.3
   resolution: "@types/minimatch@npm:3.0.3"
@@ -968,6 +1094,13 @@ __metadata:
   version: 2.0.3
   resolution: "@types/unist@npm:2.0.3"
   checksum: 42e0dc4ac75a27c4bb91a3f8e82edfd8819cacb6edda08bdfb436700ea01a587faa30017fde744b0a0b33825f5e37686398c1eb5b664cabc3a72a6b3757f85a5
+  languageName: node
+  linkType: hard
+
+"@types/uuid@npm:^8.0.0":
+  version: 8.0.0
+  resolution: "@types/uuid@npm:8.0.0"
+  checksum: a1d953039620278f03198b2ad7574ba884d73338756fe1ce2628f44518140f1e1fc3ee676251713e212b9a5d2cbd5bd081e67afa439c8988619540076b627a86
   languageName: node
   linkType: hard
 
@@ -6237,6 +6370,13 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"long@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "long@npm:4.0.0"
+  checksum: 9cebc1ee8b9ea15278c977f61250ac41becdf7216104905f0d198c147ed2a7a090a2d83bb212878d3dc3ccb0199e6428862f848ec4b0ecfeab4dfe24eccf21b3
+  languageName: node
+  linkType: hard
+
 "longest-streak@npm:^2.0.1":
   version: 2.0.4
   resolution: "longest-streak@npm:2.0.4"
@@ -7791,6 +7931,30 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"protobufjs@npm:^6.9.0":
+  version: 6.9.0
+  resolution: "protobufjs@npm:6.9.0"
+  dependencies:
+    "@protobufjs/aspromise": ^1.1.2
+    "@protobufjs/base64": ^1.1.2
+    "@protobufjs/codegen": ^2.0.4
+    "@protobufjs/eventemitter": ^1.1.0
+    "@protobufjs/fetch": ^1.1.0
+    "@protobufjs/float": ^1.0.2
+    "@protobufjs/inquire": ^1.1.0
+    "@protobufjs/path": ^1.1.2
+    "@protobufjs/pool": ^1.1.0
+    "@protobufjs/utf8": ^1.1.0
+    "@types/long": ^4.0.1
+    "@types/node": ^13.7.0
+    long: ^4.0.0
+  bin:
+    pbjs: bin/pbjs
+    pbts: bin/pbts
+  checksum: 72b0be5f24e83a03ecef50bbe84334fc8dbf1a0e833a1c063c92e9f5e6a07c0d2665651ce17c0bcf98c9e2dec94442d9ad3a8cdd6a4dddb7635586e47547eb15
+  languageName: node
+  linkType: hard
+
 "prr@npm:~1.0.1":
   version: 1.0.1
   resolution: "prr@npm:1.0.1"
@@ -8757,7 +8921,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"source-map-support@npm:^0.5.6, source-map-support@npm:~0.5.12":
+"source-map-support@npm:^0.5.19, source-map-support@npm:^0.5.6, source-map-support@npm:~0.5.12":
   version: 0.5.19
   resolution: "source-map-support@npm:0.5.19"
   dependencies:
@@ -10080,6 +10244,15 @@ typescript@^3.9.5:
   bin:
     uuid: dist/bin/uuid
   checksum: a56be8a5bbf2bae755d749d0693637274935b5ae250dfaaaf79241391cf1a7c142a202492196363ec62ec51a476e5e3fc4de2944d854abf2e9b35a33e0e31d4c
+  languageName: node
+  linkType: hard
+
+"uuid@npm:^8.2.0":
+  version: 8.2.0
+  resolution: "uuid@npm:8.2.0"
+  bin:
+    uuid: dist/bin/uuid
+  checksum: 6059ba10c32a42897af628b9e434ff523713614714d93845c76ee153f0d9c7e88ab47b8d03cadbe5f4c39a57abc4fbff46ae533fff6318cc6c907e4cd626fcb2
   languageName: node
   linkType: hard
 
