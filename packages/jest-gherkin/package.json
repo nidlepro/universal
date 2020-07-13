@@ -1,6 +1,6 @@
 {
   "name": "@arekzc/jest-gherkin",
-  "version": "0.2.0",
+  "version": "0.2.3",
   "main": "dist/index.js",
   "repository": "https://github.com/ArekZc/chronos",
   "author": "Arek Zając",

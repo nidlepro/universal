@@ -36,14 +36,16 @@ export class Step {
 
   static fromGherkin(astStep: any, stepDefinitions: StepDefinitionsMap) {
     const keyword = astStep.keyword.trim().toLowerCase() as string
-    let params: any
+    let params: any = []
     const matchedDefinitions: StepDefinition[] = stepDefinitions[keyword].filter((stepDefinition: StepDefinition) => {
       if (typeof stepDefinition.match === 'string') {
         return stepDefinition.match === astStep.text
       } else if (stepDefinition.match instanceof RegExp) {
         const match = (astStep.text as string).match(stepDefinition.match)
-        
-        params = match
+
+        if (match !== null) {
+          params = match.slice(1)
+        }
 
         return match
       }
