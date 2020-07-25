@@ -22,11 +22,12 @@ export function parseOutlineScenario(astOutlineScenario: any, stepDefinitions: S
       astOutlineScenario.steps.map((step: any) => (
         Step.fromGherkin({
           ...step,
+          originalKeyword: step.keyword,
           text: interpolateReplace(step.text, example.data),
         }, stepDefinitions)
       )),
       parseTags(astOutlineScenario.tags),
-      astOutlineScenario.location.line,
+      Number(astOutlineScenario.location.line),
     )
   })
 }

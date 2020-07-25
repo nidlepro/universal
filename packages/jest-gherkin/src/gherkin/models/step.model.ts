@@ -27,6 +27,7 @@ export class Step {
   constructor(
     public readonly text: string,
     public readonly keyword: string,
+    public readonly originalKeyword: string,
     public readonly lineNumber: number,
     public readonly definition: StepDefinition,
     public readonly params: any,
@@ -70,7 +71,8 @@ export class Step {
     return new Step(
       astStep.text,
       keyword,
-      astStep.location.line,
+      astStep.originalKeyword,
+      Number(astStep.location.line),
       matchedDefinitions[0],
       params,
       DocString.fromGherkin(astStep.docString),

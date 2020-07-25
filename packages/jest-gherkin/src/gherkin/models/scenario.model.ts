@@ -19,13 +19,14 @@ export class Scenario {
           // When use and we should use keyword from previous step until different keyword appears
           keyword: ['and', 'but'].includes(astStep.keyword.trim().toLowerCase())
             ? steps[steps.length - 1].keyword 
-            : astStep.keyword
+            : astStep.keyword,
+          originalKeyword: astStep.keyword,
         }, stepDefinitions))
         
         return steps
       }, []),
       parseTags(astScenario.tags),
-      astScenario.location.line,
+      Number(astScenario.location.line),
     )
   }
 }

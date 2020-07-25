@@ -32,6 +32,7 @@ createDefinition<World>()
     expect('people').not.toBe('haters')
   })
   .run(`
+@skip
 Feature: Rocket Launching
 
 Scenario: Launching a SpaceX rocket

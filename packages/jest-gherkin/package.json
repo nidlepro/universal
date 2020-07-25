@@ -15,7 +15,8 @@
     "typescript": "^3.9.5"
   },
   "dependencies": {
-    "@cucumber/gherkin": "^14.0.2"
+    "@cucumber/gherkin": "^14.0.2",
+    "chalk": "^4.1.0"
   },
   "peerDependencies": {
     "@types/jest": "*",
