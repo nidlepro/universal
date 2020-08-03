@@ -35,7 +35,6 @@ jobs:
         shell: bash
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
-          YARN_ENABLE_NETWORK: 0
       # - name: Install Node.js with Yarn v2
       #   uses: actions/checkout@v2
       #   with:
