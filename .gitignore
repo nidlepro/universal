@@ -118,4 +118,3 @@ dist
 .yarn/cache
 .yarn/unplugged
 .yarn/pnpify
-.yarn/versions
