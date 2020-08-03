@@ -56,41 +56,12 @@ jobs:
         shell: bash
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
-      # - name: Install Node.js with Yarn v2
-      #   uses: actions/checkout@v2
-      #   with:
-      #     repository: arekzc/chronos-actions
-      #     token: ${{ secrets.GH_TOKEN }}
-      #     path: .github/actions/chronos
-      # - name: Install project dependencies
-      #   uses: ./.github/actions/chronos/yarn
-      #   with:
-      #     cmd: install
-      #     gh_token: ${{ secrets.GH_TOKEN }}
-      # - name: Build packages
-      #   uses: ./.github/actions/chronos/yarn
-      #   with:
-      #     cmd: workspaces foreach --exclude root run build
-      #     gh_token: ${{ secrets.GH_TOKEN }}
-      # - name: Lint packages
-      #   uses: ./.github/actions/chronos/yarn
-      #   with:
-      #     cmd: workspaces foreach --exclude root run lint
-      #     gh_token: ${{ secrets.GH_TOKEN }}
-      # - name: Run tests
-      #   uses: ./.github/actions/chronos/yarn
-      #   with:
-      #     cmd: workspaces foreach --exclude root run test
-      #     gh_token: ${{ secrets.GH_TOKEN }}
-      # - name: Release packages
-      #   uses: ./.github/actions/chronos/yarn
-      #   with:
-      #     cmd: workspaces foreach --exclude root version ${GITHUB_REF/refs\/tags\//}
-      #     gh_token: ${{ secrets.GH_TOKEN }}
-      #   if: ${{ startsWith(github.ref, 'refs/tags/') }}
-      # - name: Publish packages
-      #   uses: ./.github/actions/chronos/yarn
-      #   with:
-      #     cmd: workspaces foreach --exclude root npm publish
-      #     gh_token: ${{ secrets.GH_TOKEN }}
-      #   if: ${{ startsWith(github.ref, 'refs/tags/') }}
+
+      - name: 'Release packages'
+        run: |
+          yarn workspaces foreach --exclude root version ${GITHUB_REF/refs\/tags\//}
+          yarn workspaces foreach --exclude root npm publish
+        shell: bash
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        if: ${{ startsWith(github.ref, 'refs/tags/') }}
