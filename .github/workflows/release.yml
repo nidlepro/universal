@@ -31,7 +31,7 @@ jobs:
 
       - name: 'Check that the Yarn files don''t change on new installs (fix w/ "yarn install")'
         run: |
-          yarn --immutable --immutable-cache
+          yarn --immutable
         shell: bash
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
