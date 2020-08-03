@@ -59,7 +59,7 @@ jobs:
 
       - name: 'Release packages'
         run: |
-          yarn workspaces foreach --exclude root version ${GITHUB_REF/refs\/tags\//}
+          yarn workspaces foreach --exclude root version -f ${GITHUB_REF/refs\/tags\//}
           yarn workspaces foreach --exclude root npm publish
         shell: bash
         env:
