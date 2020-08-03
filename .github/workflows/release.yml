@@ -29,9 +29,23 @@ jobs:
         with:
           node-version: 14.x
 
-      - name: 'Check that the Yarn files don''t change on new installs (fix w/ "yarn install")'
+      - name: 'Install dependencies'
         run: |
           yarn --immutable
+        shell: bash
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+      
+      - name: 'Lint files'
+        run: |
+          yarn workspaces foreach --exclude root run lint
+        shell: bash
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+
+      - name: 'Test'
+        run: |
+          yarn workspaces foreach --exclude root run test
         shell: bash
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
