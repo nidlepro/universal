@@ -1,4 +1,4 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-const { createPrettierConfig } = require('@arekzc/chronos-cli')
+const { createPrettierConfig } = require('@nidlepro/universal-cli')
 
 module.exports = createPrettierConfig()

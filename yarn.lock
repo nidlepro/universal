@@ -5,55 +5,6 @@ __metadata:
   version: 4
   cacheKey: 5
 
-"@arekzc/chronos-cli@workspace:*, @arekzc/chronos-cli@workspace:packages/chronos-cli":
-  version: 0.0.0-use.local
-  resolution: "@arekzc/chronos-cli@workspace:packages/chronos-cli"
-  dependencies:
-    "@rauschma/stringio": ^1.4.0
-    "@types/eslint": ^6.8.1
-    "@types/jest": ^25.2.3
-    "@types/lodash": ^4.14.155
-    "@types/prettier": ^2.0.1
-    "@types/stylelint": ^9.10.1
-    "@typescript-eslint/eslint-plugin": ^3.1.0
-    "@typescript-eslint/parser": ^3.1.0
-    commander: ^5.1.0
-    eslint: ^7.2.0
-    eslint-config-prettier: ^6.11.0
-    eslint-plugin-prettier: ^3.1.3
-    file-loader: ^6.0.0
-    jest: ^26.0.1
-    lodash: ^4.17.15
-    prettier: ^2.0.5
-    reflect-metadata: ^0.1.13
-    stylelint: ^13.6.0
-    stylelint-config-sass-guidelines: ^7.0.0
-    ts-jest: ^26.1.0
-    ts-loader: ^7.0.5
-    typescript: ^3.9.5
-    url-loader: ^4.1.0
-    webpack: ^4.43.0
-    webpack-node-externals: ^1.7.2
-  bin:
-    chronos: ./bin/chronos.js
-  languageName: unknown
-  linkType: soft
-
-"@arekzc/jest-gherkin@workspace:packages/jest-gherkin":
-  version: 0.0.0-use.local
-  resolution: "@arekzc/jest-gherkin@workspace:packages/jest-gherkin"
-  dependencies:
-    "@arekzc/chronos-cli": "workspace:*"
-    "@cucumber/gherkin": ^14.0.2
-    chalk: ^4.1.0
-    typescript: ^3.9.5
-  peerDependencies:
-    "@types/jest": "*"
-    jest: "*"
-    rxjs: "*"
-  languageName: unknown
-  linkType: soft
-
 "@babel/code-frame@npm:^7.0.0, @babel/code-frame@npm:^7.10.1":
   version: 7.10.1
   resolution: "@babel/code-frame@npm:7.10.1"
@@ -651,6 +602,55 @@ __metadata:
   checksum: 50f40cece96f298ec0da9d94d9099e3c837403b63b3132f085eee47d0f627c07d4418ee60828a3ef3a5fd15b741dd390078d089f5a65161c0378d4876ce27935
   languageName: node
   linkType: hard
+
+"@nidlepro/universal-cli@workspace:*, @nidlepro/universal-cli@workspace:packages/universal-cli":
+  version: 0.0.0-use.local
+  resolution: "@nidlepro/universal-cli@workspace:packages/universal-cli"
+  dependencies:
+    "@rauschma/stringio": ^1.4.0
+    "@types/eslint": ^6.8.1
+    "@types/jest": ^25.2.3
+    "@types/lodash": ^4.14.155
+    "@types/prettier": ^2.0.1
+    "@types/stylelint": ^9.10.1
+    "@typescript-eslint/eslint-plugin": ^3.1.0
+    "@typescript-eslint/parser": ^3.1.0
+    commander: ^5.1.0
+    eslint: ^7.2.0
+    eslint-config-prettier: ^6.11.0
+    eslint-plugin-prettier: ^3.1.3
+    file-loader: ^6.0.0
+    jest: ^26.0.1
+    lodash: ^4.17.15
+    prettier: ^2.0.5
+    reflect-metadata: ^0.1.13
+    stylelint: ^13.6.0
+    stylelint-config-sass-guidelines: ^7.0.0
+    ts-jest: ^26.1.0
+    ts-loader: ^7.0.5
+    typescript: ^3.9.5
+    url-loader: ^4.1.0
+    webpack: ^4.43.0
+    webpack-node-externals: ^1.7.2
+  bin:
+    universal: ./bin/cli.js
+  languageName: unknown
+  linkType: soft
+
+"@nidlepro/universal-gherkin@workspace:packages/universal-gherkin":
+  version: 0.0.0-use.local
+  resolution: "@nidlepro/universal-gherkin@workspace:packages/universal-gherkin"
+  dependencies:
+    "@cucumber/gherkin": ^14.0.2
+    "@nidlepro/universal-cli": "workspace:*"
+    chalk: ^4.1.0
+    typescript: ^3.9.5
+  peerDependencies:
+    "@types/jest": "*"
+    jest: "*"
+    rxjs: "*"
+  languageName: unknown
+  linkType: soft
 
 "@nodelib/fs.scandir@npm:2.1.3":
   version: 2.1.3

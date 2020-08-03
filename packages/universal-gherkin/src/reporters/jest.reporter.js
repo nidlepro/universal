@@ -7,8 +7,6 @@ class GherkinConsoleReporter {
   }
 
   onTestResult(test, testResult, aggregatedResult) {
-    console.log(testResult)
-
     const resultsGroups = testResult.testResults.reduce((acc, result) => {
       if (!acc[result.ancestorTitles[0]]) {
         acc[result.ancestorTitles[0]] = []

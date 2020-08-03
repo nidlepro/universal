@@ -1,5 +1,5 @@
 {
-  "extends": "@arekzc/chronos-cli/config/tsconfig.json",
+  "extends": "@nidlepro/universal-cli/config/tsconfig.json",
   "compilerOptions": {
     "outDir": "dist"
   },

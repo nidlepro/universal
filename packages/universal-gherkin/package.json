@@ -1,17 +1,17 @@
 {
-  "name": "@arekzc/jest-gherkin",
+  "name": "@nidlepro/universal-gherkin",
   "version": "0.2.3",
   "main": "dist/index.js",
-  "repository": "https://github.com/ArekZc/chronos",
+  "repository": "https://github.com/nidlepro/universal",
   "author": "Arek Zając",
   "license": "MIT",
   "scripts": {
-    "lint": "chronos lint",
+    "lint": "universal lint",
     "build": "tsc -p ./tsconfig.build.json",
-    "test": "chronos test"
+    "test": "universal test"
   },
   "devDependencies": {
-    "@arekzc/chronos-cli": "workspace:*",
+    "@nidlepro/universal-cli": "workspace:*",
     "typescript": "^3.9.5"
   },
   "dependencies": {

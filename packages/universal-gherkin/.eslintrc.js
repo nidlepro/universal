@@ -1,4 +1,4 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-const { createEslintConfig } = require('@arekzc/chronos-cli')
+const { createEslintConfig } = require('@nidlepro/universal-cli')
 
 module.exports = createEslintConfig()
