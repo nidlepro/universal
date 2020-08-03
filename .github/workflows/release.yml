@@ -35,6 +35,13 @@ jobs:
         shell: bash
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
+
+      - name: 'Build packages'
+        run: |
+          yarn workspaces foreach --exclude root run build
+        shell: bash
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
       
       - name: 'Lint files'
         run: |
