@@ -17,7 +17,7 @@ export class Scenario {
         steps.push(Step.fromGherkin({
           ...astStep,
           // When use and we should use keyword from previous step until different keyword appears
-          keyword: ['and', 'but'].includes(astStep.keyword.trim().toLowerCase())
+          keyword: ['and', 'but', '*'].includes(astStep.keyword.trim().toLowerCase())
             ? steps[steps.length - 1].keyword 
             : astStep.keyword,
           originalKeyword: astStep.keyword,
