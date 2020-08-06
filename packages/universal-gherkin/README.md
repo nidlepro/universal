@@ -139,6 +139,7 @@ import rocketLaunchingDefinition, { RocketLaunchingWorld } from './definition'
 interface World extends RocketLaunchingWorld {}
 
 createDefinition<World>()
+  .from(rocketLaunchingDefinition)
   .withThen('nobody should doubt me ever again', () => {
     expect('people').not.toBe('haters')
   })
