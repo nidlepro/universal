@@ -1,7 +1,7 @@
 {
   "extends": "@nidlepro/universal-cli/config/tsconfig.json",
   "compilerOptions": {
-    "outDir": "dist"
+    "outDir": "dist",
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules"]

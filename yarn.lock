@@ -611,6 +611,7 @@ __metadata:
     "@types/eslint": ^6.8.1
     "@types/jest": ^25.2.3
     "@types/lodash": ^4.14.155
+    "@types/node": ^14.0.27
     "@types/prettier": ^2.0.1
     "@types/stylelint": ^9.10.1
     "@typescript-eslint/eslint-plugin": ^3.1.0
@@ -632,6 +633,9 @@ __metadata:
     url-loader: ^4.1.0
     webpack: ^4.43.0
     webpack-node-externals: ^1.7.2
+  peerDependencies:
+    "@typescript-eslint/eslint-plugin": "*"
+    eslint-plugin-prettier: "*"
   bin:
     universal: ./bin/cli.js
   languageName: unknown
@@ -643,7 +647,13 @@ __metadata:
   dependencies:
     "@cucumber/gherkin": ^14.0.2
     "@nidlepro/universal-cli": "workspace:*"
+    "@types/jest": "*"
+    "@typescript-eslint/eslint-plugin": ^3.8.0
+    "@yarnpkg/pnpify": ^2.0.0-rc.24
     chalk: ^4.1.0
+    eslint: ^7.2.0
+    eslint-plugin-prettier: ^3.1.4
+    jest: ^26.0.1
     typescript: ^3.9.5
   peerDependencies:
     "@types/jest": "*"
@@ -970,6 +980,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/jest@npm:*":
+  version: 26.0.9
+  resolution: "@types/jest@npm:26.0.9"
+  dependencies:
+    jest-diff: ^25.2.1
+    pretty-format: ^25.2.1
+  checksum: 5d2b5fb5122d384f1857c5f7f52643957ba0494db44f4eee22323f3d548e069cf1389a8985f60710cea4abc6fc31d50e3a7ead5ad02a9d00a092744cb66aecea
+  languageName: node
+  linkType: hard
+
 "@types/jest@npm:^25.2.3":
   version: 25.2.3
   resolution: "@types/jest@npm:25.2.3"
@@ -1042,6 +1062,13 @@ __metadata:
   version: 13.13.12
   resolution: "@types/node@npm:13.13.12"
   checksum: 247f27e0863a4b23c7129b246b5d3a84dcee52ac7d853807fb81058cf9986fef7b82cc386390f8688e7a40f1665ebebde9128f31afa242f7ee7996cfc94af2ea
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:^14.0.27":
+  version: 14.0.27
+  resolution: "@types/node@npm:14.0.27"
+  checksum: 54ecf408eb94f44685e12ef395d8d9d5789cb9e209f171153b6b951272af6b8da099778d09d66454aa5d35ce246f3922ebd7476ed768bf3bd4267306c12a6703
   languageName: node
   linkType: hard
 
@@ -1141,6 +1168,27 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@typescript-eslint/eslint-plugin@npm:^3.8.0":
+  version: 3.8.0
+  resolution: "@typescript-eslint/eslint-plugin@npm:3.8.0"
+  dependencies:
+    "@typescript-eslint/experimental-utils": 3.8.0
+    debug: ^4.1.1
+    functional-red-black-tree: ^1.0.1
+    regexpp: ^3.0.0
+    semver: ^7.3.2
+    tsutils: ^3.17.1
+  peerDependencies:
+    "@typescript-eslint/parser": ^3.0.0
+    eslint: ^5.0.0 || ^6.0.0 || ^7.0.0
+    typescript: "*"
+  peerDependenciesMeta:
+    typescript:
+      optional: true
+  checksum: eedb39dbed67a6db875d247de498404a5dfdf3c19d6146be18ad4f7823288ab4c4a49b41094ae7ff3824378b1b36b02f4c1851c79cf08d1f89b3278fb729b521
+  languageName: node
+  linkType: hard
+
 "@typescript-eslint/experimental-utils@npm:3.2.0":
   version: 3.2.0
   resolution: "@typescript-eslint/experimental-utils@npm:3.2.0"
@@ -1152,6 +1200,21 @@ __metadata:
   peerDependencies:
     eslint: "*"
   checksum: f01e45ef6d80642ce2f72c1d07c3cc0914d09e26ed66316adbd755ee1275804ccafa53862b06f9841ff6dcfefa1df7586ec468dcb405b9afc3d433b99ad4e167
+  languageName: node
+  linkType: hard
+
+"@typescript-eslint/experimental-utils@npm:3.8.0":
+  version: 3.8.0
+  resolution: "@typescript-eslint/experimental-utils@npm:3.8.0"
+  dependencies:
+    "@types/json-schema": ^7.0.3
+    "@typescript-eslint/types": 3.8.0
+    "@typescript-eslint/typescript-estree": 3.8.0
+    eslint-scope: ^5.0.0
+    eslint-utils: ^2.0.0
+  peerDependencies:
+    eslint: "*"
+  checksum: 6403f33cf6e68cd86cc9f8363a8e414bf5be5b5a31917dae0cc6078dac41563aaf199f696b3d652160b2f347f83584f6309ffff2dd2af83d6f18d50783bfcd30
   languageName: node
   linkType: hard
 
@@ -1173,6 +1236,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@typescript-eslint/types@npm:3.8.0":
+  version: 3.8.0
+  resolution: "@typescript-eslint/types@npm:3.8.0"
+  checksum: e6eaaccda7abbabbc1e2fb18b7a7aaef326bd33ed984ab9140afa7a8dd967a898290042c50f32f01b53cd417d1f0e5081d2f0582c760f09cf3cc9f262cbe77e0
+  languageName: node
+  linkType: hard
+
 "@typescript-eslint/typescript-estree@npm:3.2.0":
   version: 3.2.0
   resolution: "@typescript-eslint/typescript-estree@npm:3.2.0"
@@ -1190,6 +1260,36 @@ __metadata:
     typescript:
       optional: true
   checksum: 081da5cb028576eeb103d5989f421999a00e795b6575061d5ae650409b6b5d1e913b383bf0611557e710fcc6cc7dcf35f5cbfb3b2e8dc71049ac7d1c1454895c
+  languageName: node
+  linkType: hard
+
+"@typescript-eslint/typescript-estree@npm:3.8.0":
+  version: 3.8.0
+  resolution: "@typescript-eslint/typescript-estree@npm:3.8.0"
+  dependencies:
+    "@typescript-eslint/types": 3.8.0
+    "@typescript-eslint/visitor-keys": 3.8.0
+    debug: ^4.1.1
+    glob: ^7.1.6
+    is-glob: ^4.0.1
+    lodash: ^4.17.15
+    semver: ^7.3.2
+    tsutils: ^3.17.1
+  peerDependencies:
+    typescript: "*"
+  peerDependenciesMeta:
+    typescript:
+      optional: true
+  checksum: 2e7948abe9ea112fdc0000a535d01ea8755d213c6c6961d8a178ef107239ce70d1502e31593d868603d6d3f3a4644c5dc906b89408cc9e46dac8dae68d66db82
+  languageName: node
+  linkType: hard
+
+"@typescript-eslint/visitor-keys@npm:3.8.0":
+  version: 3.8.0
+  resolution: "@typescript-eslint/visitor-keys@npm:3.8.0"
+  dependencies:
+    eslint-visitor-keys: ^1.1.0
+  checksum: cb1252b3f0f4c912a0035be264b33323c93d156da178e202b5ef339e6e3ea334f2c9c6d373eb29eb46979240dc4e4c60af4e124c998130b41fe6aa7473bcda1d
   languageName: node
   linkType: hard
 
@@ -3654,6 +3754,18 @@ __metadata:
     eslint: ">= 5.0.0"
     prettier: ">= 1.13.0"
   checksum: fcaf7c783309145f46611b43156fc51c31b02055d0eb09d7ab29d9ad085d34ad492bf2e611804396fcebf0122b259019b6ec24c3d60a4c7a316db9e45f952c32
+  languageName: node
+  linkType: hard
+
+"eslint-plugin-prettier@npm:^3.1.4":
+  version: 3.1.4
+  resolution: "eslint-plugin-prettier@npm:3.1.4"
+  dependencies:
+    prettier-linter-helpers: ^1.0.0
+  peerDependencies:
+    eslint: ">=5.0.0"
+    prettier: ">=1.13.0"
+  checksum: 4e4df155790a20a7ceef9008bbc22a677a8f7e790e9ef613a049a78dfe0b5dc3726afcd4bfd2a8ce41abc88c9a11db029819a722f70b940da32a03629e7f7832
   languageName: node
   linkType: hard
 

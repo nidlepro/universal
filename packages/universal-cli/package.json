@@ -39,5 +39,12 @@
     "lint": "./bin/cli.js lint",
     "build": "tsc",
     "test": "./bin/cli.js test"
+  },
+  "peerDependencies": {
+    "@typescript-eslint/eslint-plugin": "*",
+    "eslint-plugin-prettier": "*"
+  },
+  "devDependencies": {
+    "@types/node": "^14.0.27"
   }
 }
