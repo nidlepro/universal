@@ -3,4 +3,4 @@ releases:
 
 undecided:
   - root
-  - "@nidlepro/universal-gherkin"
+  - "@nidlepro/universal-cli"
