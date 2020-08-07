@@ -17,7 +17,10 @@ export function createJestConfig(overrideConfig: any): any {
         '^.+\\.sass$': path.join(__dirname, 'transform/cssTransform.js'),
         '^(?!.*\\.(js|jsx|ts|tsx|css|json)$)': path.join(__dirname, 'transform/fileTransform.js'),
       },
-      testMatch: ['<rootDir>/src/**/?(*.)(spec).{ts,tsx}'],
+      testMatch: [
+        '<rootDir>/src/**/?(*.)(spec).{ts,tsx}',
+        '<rootDir>/test/**/?(*.)(spec).{ts,tsx}'
+      ],
       testURL: 'http://localhost',
       testEnvironment: 'node',
       notify: !process.env.CI,
