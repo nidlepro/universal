@@ -1,10 +1,10 @@
-const chalk = require('chalk')
+import * as chalk from 'chalk'
 
 class GherkinConsoleReporter {
-  constructor(globalConfig, options) {
-    this._globalConfig = globalConfig
-    this._options = options
-  }
+  constructor(
+    private readonly globalConfig: any,
+    private readonly options: any,
+  ) {}
 
   onTestResult(test, testResult, aggregatedResult) {
     const resultsGroups = testResult.testResults.reduce((acc, result) => {
@@ -29,4 +29,4 @@ class GherkinConsoleReporter {
   }
 }
 
-module.exports = GherkinConsoleReporter
+export = GherkinConsoleReporter
