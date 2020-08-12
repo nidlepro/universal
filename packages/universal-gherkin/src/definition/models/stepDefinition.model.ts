@@ -1,11 +1,11 @@
-import { DocString } from "../../gherkin/models/docString.model"
-import { DataTable } from "../../gherkin/models/dataTable.model"
+import { DocString } from '../../gherkin/models/docString.model'
+import { DataTable } from '../../gherkin/models/dataTable.model'
 
 export interface StepExecutionContext<World, Params, Data> {
   world: World
   params: Params
-  dataTable?: DataTable<Data>
-  docString?: DocString
+  dataTable: DataTable<Data>
+  docString: DocString
 }
 
 export interface StepExecutionFunction<World, Params, Data> {
